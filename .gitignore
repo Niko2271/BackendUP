@@ -1,0 +1,4 @@
+store.db
+*.exe
+/cmd/server/server
+.env
