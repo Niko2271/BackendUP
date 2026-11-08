@@ -1,0 +1,579 @@
+{
+  "info": {
+    "_postman_id": "c6a960f0-bd03-42bd-894c-91f019e68385",
+    "name": "для clotheShoes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57432230"
+  },
+  "item": [
+    {
+      "name": "товары",
+      "item": [
+        {
+          "name": "Создать товар",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"3\",\n    \"name\": \"Кроссовки\",\n    \"type\": \"Обувь\",\n    \"gender\": \"Жен\",\n    \"size\": \"38\",\n    \"color\": \"Черный\",\n    \"description\": \"Удобные\",\n    \"brand\": \"Baden\",\n    \"season\": \"Лето\",\n    \"price\": 2990\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "просмотр товаров",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5050/product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "удаление товара",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/product/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "product",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "userы",
+      "item": [
+        {
+          "name": "добавление пользователя",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Илюша\",\"email\":\"unique_email_test_99999@sol.com\",\"phone\":\"89512663238\",\"roleId\":\"1\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/user",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "просмотр userов",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": \"2\",\n    \"name\": \"Джинсы клеш\",\n    \"price\": 4000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/user",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "user"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "обновка пользователя",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Илья\",\r\n    \"email\": \"new_email@mail.ru\",\r\n    \"phone\": \"8999999489\",\r\n    \"role_id\": \"2\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/user/1794171720082834100",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "user",
+                "1794171720082834100"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "корзина",
+      "item": [
+        {
+          "name": "просмотр корзины",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Илюша\",\"email\":\"unique_email_test_99999@sol.com\",\"phone\":\"89512663238\",\"roleId\":\"1\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/cart/1794171720082834100",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "cart",
+                "1794171720082834100"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "создание корзины",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\" : \"1794171720082834100\",\r\n    \"productId\" : \"2\",\r\n    \"count\" : 1 \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/cart",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "заказы",
+      "item": [
+        {
+          "name": "чекаем заказ его позиции",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5050/order_item/1794090636937210500",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "order_item",
+                "1794090636937210500"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "cоздание заказа",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userId\": \"1794171720082834100\",\r\n    \"datetime\": \"2026-11-09 12:00:00\",\r\n    \"status\": \"Принят\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/order",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "order"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "чекаем заказы4",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\":\"Илюша\",\"email\":\"unique_email_test_99999@sol.com\",\"phone\":\"89512663238\",\"roleId\":\"1\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/order",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "order"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "элемент заказа",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderId\": \"1794090636937210500\",\r\n    \"productId\": \"1\",\r\n    \"price\": 1590\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/order_item",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "order_item"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "обновка статуса заказа",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\" : \"Мб что то в работе\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5050/order/1794090636937210500",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5050",
+              "path": [
+                "order",
+                "1794090636937210500"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "фоточки",
+      "item": [
+        {
+          "name": "добавление фото",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\" : \"22\",\r\n    \"filename\" : \"футболка.jpg\",\r\n    \"productId\" : \"1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{ссылка}}/photo",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "photo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "чекаем фотки",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ссылка}}/photo/22",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "photo",
+                "22"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "del фотку",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{ссылка}}/photo/22",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "photo",
+                "22"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "роли",
+      "item": [
+        {
+          "name": "+",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"гость\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{ссылка}}/role",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "role"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "чек ролей",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ссылка}}/role",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "role"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "del",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{ссылка}}/role/1794171922178990000",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "role",
+                "1794171922178990000"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "обновка",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\" : \"gosшшшшt\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{ссылка}}/role/1794171922178990000",
+              "host": [
+                "{{ссылка}}"
+              ],
+              "path": [
+                "role",
+                "1794171922178990000"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "чек фильтр и пагин",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5050/product?color=Черный&limit=1&offset=0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5050",
+          "path": [
+            "product"
+          ],
+          "query": [
+            {
+              "key": "color",
+              "value": "Черный"
+            },
+            {
+              "key": "limit",
+              "value": "1"
+            },
+            {
+              "key": "gender",
+              "value": "Мужской",
+              "disabled": true
+            },
+            {
+              "key": "offset",
+              "value": "0"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
